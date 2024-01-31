@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -18,46 +19,39 @@ public class GameManager : MonoBehaviour
         else
         {
             Instance = this;
-            init();
-
-            SeedField.onValueChanged.AddListener(_updateSeed);
-            RegenerateSeedToggle.onValueChanged.AddListener(_updateSeedRegen);
         }
     }
     
-    private void _updateSeed(string newValue)
-    {
-        Guid.TryParse(newValue, out this.Seed);
-    }
-
-    private void _updateSeedRegen(bool enabled)
-    {
-        RegenerateSeed = enabled;
-        SeedField.interactable = !enabled;
-    }
-
-    public TMP_InputField SeedField;
-    public Toggle RegenerateSeedToggle;
-    
     [Header("Seed")]
-    public bool RegenerateSeed;
+    public bool RegenerateSeed = true;
+
     [ShowInInspector]
-    public Guid Seed;
+    private Guid _seed;
+    public Guid Seed
+    {
+        get
+        {
+            return _seed;
+        }
+        set
+        {
+            _seed = value;
+            OnSeedUpdate?.Invoke(value);
+        }
+    }
+
+    public static Action<Guid> OnSeedUpdate;
+    
     public System.Random Generator;
 
     [Button]
-    public void init()
+    public void Init()
     {
         if (RegenerateSeed)
         {
             Seed = Guid.NewGuid();
-            this.SeedField.text = Seed.ToString();
         }
-
-        SeedField.interactable = !RegenerateSeed;
         
         Generator = new System.Random(Seed.GetHashCode());
     }
-    
-    
 }
