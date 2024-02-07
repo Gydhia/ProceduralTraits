@@ -1,0 +1,19 @@
+using UnityEngine;
+using System.Collections.Generic;
+
+public enum TPEnum
+{
+    // Define enum values for physical traits here
+}
+
+[CreateAssetMenu(fileName = "PhysicalTraits", menuName = "ScriptableObjects/PhysicalTraits")]
+public class PhysicalTraitsSO : ScriptableObject
+{
+    [SerializeField] private Dictionary<TPEnum, int> dataDictionary = new Dictionary<TPEnum, int>();
+
+    public Dictionary<TPEnum, int> DataDictionary
+    {
+        get { return dataDictionary; }
+        set { dataDictionary = value; }
+    }
+}
