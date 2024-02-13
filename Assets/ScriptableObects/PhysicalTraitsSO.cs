@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
 
 public enum TPEnum
 {
@@ -7,7 +8,7 @@ public enum TPEnum
 }
 
 [CreateAssetMenu(fileName = "PhysicalTraits", menuName = "ScriptableObjects/PhysicalTraits")]
-public class PhysicalTraitsSO : ScriptableObject
+public class PhysicalTraitsSO : SerializedScriptableObject
 {
     [SerializeField] private Dictionary<TPEnum, int> dataDictionary = new Dictionary<TPEnum, int>();
 
