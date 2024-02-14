@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
 
-public class CharacterInfo : MonoBehaviour
+public class CharacterInfo
 {
     public string FirstName;
     public string LastName;
     
-    public string BirthEmpire;
+    public EmpirePreset BirthEmpire;
     public string BirthCity;
     
-    public string CurrentEmpire;
+    public EmpirePreset CurrentEmpire;
     public string CurrentCity;
 
     public string Description;
@@ -41,22 +41,20 @@ public class CharacterInfo : MonoBehaviour
     {
         List<EmpirePreset> empires = GameManager.Instance.Empires;
         
-        EmpirePreset birthEmpire = empires[generator.Next(0, empires.Count)];
+        BirthEmpire = empires[generator.Next(0, empires.Count)];
 
-        FirstName = birthEmpire.FirstNames[generator.Next(0, birthEmpire.FirstNames.Count)];
-        LastName = birthEmpire.LastNames[generator.Next(0, birthEmpire.LastNames.Count)];
+        FirstName = BirthEmpire.FirstNames[generator.Next(0, BirthEmpire.FirstNames.Count)];
+        LastName = BirthEmpire.LastNames[generator.Next(0, BirthEmpire.LastNames.Count)];
         
-        BirthEmpire = birthEmpire.EmpireName;
-        BirthCity = birthEmpire.Cities[generator.Next(0, birthEmpire.Cities.Count)];
+        BirthCity = BirthEmpire.Cities[generator.Next(0, BirthEmpire.Cities.Count)];
 
-        EmpirePreset currentEmpire = empires[generator.Next(0, empires.Count)];
-        CurrentEmpire = currentEmpire.EmpireName;
-        CurrentCity = currentEmpire.Cities[generator.Next(0, currentEmpire.Cities.Count)];
+        CurrentEmpire = empires[generator.Next(0, empires.Count)];
+        CurrentCity = CurrentEmpire.Cities[generator.Next(0, CurrentEmpire.Cities.Count)];
 
         string finalDesc = string.Empty;
         finalDesc += ProcessSentence(birthSentences[generator.Next(0, birthSentences.Count)]);
         finalDesc += "\n";
-        if (birthEmpire != currentEmpire)
+        if (BirthEmpire != CurrentEmpire)
         {
             finalDesc += ProcessSentence(currentSentences[generator.Next(0, currentSentences.Count)]);
         }
@@ -69,7 +67,7 @@ public class CharacterInfo : MonoBehaviour
         return sentence
             .Replace("%NOM%", $"{FirstName} {LastName}")
             .Replace("%VILLE_NAISSANCE%", BirthCity)
-            .Replace("%EMPIRE_NAISSANCE%", BirthEmpire)
+            .Replace("%EMPIRE_NAISSANCE%", BirthEmpire.EmpireName)
             .Replace("%VILLE_ACTUELLE%", CurrentCity);
     }
 }

@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     }
 
     [Header("Characters Pictures")] [SerializeField]
-    private Camera m_pictureCamera;
+    public Camera PictureCamera;
     
     [Header("Seed")]
     public bool RegenerateSeed = true;
@@ -39,23 +39,19 @@ public class GameManager : MonoBehaviour
         set
         {
             _seed = value;
-            OnSeedUpdate?.Invoke(value);
+            Generator = new System.Random(_seed.GetHashCode());
+            OnSeedUpdate?.Invoke(value, Generator);
         }
     }
 
-    public static Action<Guid> OnSeedUpdate;
+    public static Action<Guid, System.Random> OnSeedUpdate;
+    public static Action<CharacterData> OnCharacterChanged;
 
     public List<EmpirePreset> Empires;
     public System.Random Generator;
 
-    [Button]
-    public void Init()
+    private void Start()
     {
-        if (RegenerateSeed)
-        {
-            Seed = Guid.NewGuid();
-        }
-        
-        Generator = new System.Random(Seed.GetHashCode());
+        OnCharacterChanged?.Invoke(null);
     }
 }

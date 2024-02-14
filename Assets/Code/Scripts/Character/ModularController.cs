@@ -44,6 +44,23 @@ public class ModularController : SerializedMonoBehaviour
     
     [OdinSerialize]
     private Dictionary<BodyPart, SpriteRenderer> m_body;
-    
-    
+
+    private void Awake()
+    {
+        GameManager.OnCharacterChanged += UpdateVisuals;
+    }
+
+    private void UpdateVisuals(CharacterData charData)
+    {
+        if (charData == null)
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            gameObject.SetActive(true);
+            
+            // TODO update body parts
+        }
+    }
 }

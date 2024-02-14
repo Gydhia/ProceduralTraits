@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class UISeedController : MonoBehaviour
 {
+    [Header("Seed Control")]
     [SerializeField] private Button m_regenerateButton;
     [SerializeField] private TMP_InputField m_seedField;
     [SerializeField] private Toggle m_regenerateSeedToggle;
@@ -20,20 +21,26 @@ public class UISeedController : MonoBehaviour
         m_seedField.onValueChanged.AddListener(_processSeedInput);
         m_regenerateSeedToggle.onValueChanged.AddListener(_updateSeedRegen);
         
-        GameManager.OnSeedUpdate += _updateSeed;
+        GameManager.OnSeedUpdate += UpdateSeed;
+        GameManager.OnCharacterChanged += UpdateSeedFromData;
     }
-    
-    public void OnClickGenerate()
+
+    private void UpdateSeedFromData(CharacterData charData)
+    {
+        if (charData != null)
+        {
+            m_seedField.text = charData.Seed.ToString();
+        }
+    }
+
+    public void OnClickRegenerate()
     {
         m_seedCurrentlyUsed.SetActive(true);
         m_seedField.interactable = !GameManager.Instance.RegenerateSeed;
 
-        if (!GameManager.Instance.RegenerateSeed)
-        {
-            GameManager.Instance.Seed = m_pendingSeed;
-        }
-
-        GameManager.Instance.Init();
+        GameManager.Instance.Seed = GameManager.Instance.RegenerateSeed ? 
+            Guid.NewGuid() : 
+            m_pendingSeed;
     }
 
     public void OnClickCopy()
@@ -64,7 +71,7 @@ public class UISeedController : MonoBehaviour
         }
     }
     
-    private void _updateSeed(Guid seed)
+    private void UpdateSeed(Guid seed, System.Random generator)
     {
         m_seedField.text = seed.ToString();
     }

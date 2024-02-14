@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -17,18 +18,33 @@ public class UITraitIconsController : MonoBehaviour
     
     private List<UITraitIcon> m_traitIcons;
 
-    public void Init()
+    private void Awake()
     {
-        for (int i = 0; i < 2; i++)
-        {
-            var newIcon = Instantiate(m_traitIconPrefab, m_traitsHolder);
-            
-            newIcon.SelfToggle.onValueChanged.AddListener(
-                (state) => OnToggledIconChanged(newIcon, state)
-                );
-        }
+        GameManager.OnCharacterChanged += UpdateTraits;
     }
 
+    private void UpdateTraits(CharacterData charData)
+    {
+        if (charData == null)
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            gameObject.SetActive(true);
+            
+            for (int i = 0; i < charData.MentalTraits.Count; i++)
+            {
+                var newIcon = Instantiate(m_traitIconPrefab, m_traitsHolder);
+            
+                newIcon.Init(charData.MentalTraits[i].Icon);
+                newIcon.SelfToggle.onValueChanged.AddListener(
+                    (state) => OnToggledIconChanged(newIcon, state)
+                );
+            }
+        }
+    }
+    
     private void OnToggledIconChanged(UITraitIcon icon, bool state)
     {
         

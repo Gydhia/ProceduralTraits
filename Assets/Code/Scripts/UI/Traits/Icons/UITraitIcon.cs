@@ -10,9 +10,9 @@ public class UITraitIcon : MonoBehaviour
     
     public Toggle SelfToggle;
 
-    public void Init()
+    public void Init(Sprite sprite)
     {
-        
+        m_icon.sprite = sprite;
     }
     
     private void OnStateChanged(bool newState)

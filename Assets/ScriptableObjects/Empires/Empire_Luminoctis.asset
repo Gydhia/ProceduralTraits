@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e4e9f597f09754ba2fa317000f2c6b, type: 3}
+  m_Name: Empire_Luminoctis
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  EmpireColor: {r: 0.735849, g: 0.5935386, b: 0.731783, a: 1}
+  EmpireName: Empire de Luminoctis
+  Cities:
+  - "Cit\xE9 d'Aurorium"
+  - Brillancia
+  - "\xC9clatville"
+  - Pharellum
+  - "Luxor\xE9e"
+  FirstNames:
+  - Astra
+  - "K\xE9ba"
+  - "Sol\xE8ne"
+  - Orion
+  - Stella
+  - Lucian
+  - Elara
+  - Cassio
+  - Surya
+  - "H\xE9lios"
+  LastNames:
+  - Argentius
+  - "C\xE9leste"
+  - Luminor
+  - Astrid
+  - Solarius
+  - "\xC9toileau"
+  - Aurore
+  - Radieux
+  - Raynald
+  - Brillio

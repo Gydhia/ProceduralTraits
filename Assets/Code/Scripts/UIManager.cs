@@ -34,9 +34,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         SeedController.Init();
-        DescriptionController.Init(null);
         TraitsController.Init();
-        TraitIconsController.Init();
         SavesSection.Init();
     }
 }

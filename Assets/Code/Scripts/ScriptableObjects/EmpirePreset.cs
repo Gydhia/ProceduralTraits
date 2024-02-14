@@ -6,6 +6,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Empire Preset", menuName = "ScriptableObjects/Empire")]
 public class EmpirePreset : SerializedScriptableObject
 {
+    public Color EmpireColor;
+    
     public string EmpireName;
     
     public List<string> Cities;

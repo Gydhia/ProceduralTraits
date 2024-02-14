@@ -18,10 +18,13 @@ public class UISavesSection : MonoBehaviour
                 }
             });
         }
+        
+        UISaveItem.CurrentSaveItem = m_saveItems[0];
     }
 
     private void OnSaveClicked(UISaveItem saveItem)
     {
-        Debug.Log("Clicked on save: " + saveItem);
+        UISaveItem.CurrentSaveItem = saveItem;
+        GameManager.OnCharacterChanged?.Invoke(saveItem.CharacterData);
     }
 }

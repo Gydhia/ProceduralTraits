@@ -214,5 +214,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7886deda81c368546a838f90a4f51110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_icon: {fileID: 0}
-  m_selfToggle: {fileID: 0}
+  m_icon: {fileID: 1172398849001463916}
+  SelfToggle: {fileID: 3599769555976131395}

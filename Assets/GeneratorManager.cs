@@ -1,32 +1,41 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GeneratorManager : MonoBehaviour
 {
-    public CharactersData datas;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private List<PhysicalTraitPreset> m_physicalTraitPresets;
+    [SerializeField] private List<MentalTraitPreset> m_mentalTraitPresets;
+    
+    private void Awake()
     {
-        if (datas == null)
-            Debug.LogError("No datas");
+        GameManager.OnSeedUpdate += GenerateCharacter;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GenerateCharacter(Guid seed, System.Random generator)
     {
-        Debug.Log(datas.getPhysicalTraits().Count);
-    }
+        CharacterData charData = new CharacterData(seed);
+        
+        int mentalTraitsNb = generator.Next(0, m_mentalTraitPresets.Count);
+        int physicalTraitsNb = generator.Next(0, m_physicalTraitPresets.Count);
 
-    public int GeneratePhysicalTrait()
-    {
-        Debug.Log(datas.getPhysicalTraits().Count);
-        return GameManager.Instance.Generator.Next(0, datas.getPhysicalTraits().Count);
-    }
+        for (int i = 0; i < mentalTraitsNb; i++)
+        {
+            var mTrait = m_mentalTraitPresets[generator.Next(0, m_mentalTraitPresets.Count)];
+            
+            charData.TryAddMentalTrait(mTrait);
+        }
+        
+        for (int i = 0; i < physicalTraitsNb; i++)
+        {
+            var pTrait = m_physicalTraitPresets[generator.Next(0, m_physicalTraitPresets.Count)];
 
-    public int GeneratePersonalityTrait()
-    {
-        return GameManager.Instance.Generator.Next(0, datas.getPersonnalityTraits().Count);
+            charData.TryAddPhysicalTrait(pTrait);
+        }
+        
+        charData.CharacterInfo.Generate(generator);
+        
+        GameManager.OnCharacterChanged?.Invoke(charData);
     }
-
 }
