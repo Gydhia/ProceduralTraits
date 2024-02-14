@@ -12,9 +12,6 @@ public class UISeedController : MonoBehaviour
     [SerializeField] private GameObject m_seedIncorrect;
     [SerializeField] private GameObject m_seedCurrentlyUsed;
     [SerializeField] private TextMeshProUGUI m_confirmCopy;
-
-    [SerializeField] private Color ValidColor;
-    [SerializeField] private Color UnvalidColor;
     
     private Guid m_pendingSeed;
 
@@ -57,12 +54,12 @@ public class UISeedController : MonoBehaviour
         {
             m_pendingSeed = newSeed;
             
-            m_seedField.textComponent.color = ValidColor;
+            m_seedField.textComponent.color = UIManager.Instance.ValidColor;
             m_regenerateButton.interactable = true;
         }
         else
         {
-            m_seedField.textComponent.color = UnvalidColor;
+            m_seedField.textComponent.color = UIManager.Instance.UnvalidColor;
             m_regenerateButton.interactable = false;
         }
     }

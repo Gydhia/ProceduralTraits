@@ -22,6 +22,9 @@ public class UIManager : MonoBehaviour
         }
     }
     
+    public Color ValidColor;
+    public Color UnvalidColor;
+    
     public UISeedController SeedController;
     public UIDescriptionController DescriptionController;
     public UITraitsController TraitsController;
@@ -29,7 +32,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         SeedController.Init();
-        DescriptionController.Init();
+        DescriptionController.Init(null);
         TraitsController.Init();
     }
 }
