@@ -2,9 +2,10 @@ using UnityEngine;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 
+[SerializeField]
 public enum TPEnum
 {
-    // Define enum values for physical traits here
+    
 }
 
 [CreateAssetMenu(fileName = "PhysicalTraits", menuName = "ScriptableObjects/PhysicalTraits")]

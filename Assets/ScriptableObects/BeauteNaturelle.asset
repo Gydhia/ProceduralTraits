@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af3a87826b17b694eaec9cede89807df, type: 3}
-  m_Name: PersonalityTraitsScriptableObject
+  m_Script: {fileID: 11500000, guid: 70233a9cd70ed2f44a0ad9ef2812d72f, type: 3}
+  m_Name: BeauteNaturelle
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -21,13 +21,13 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: dataDictionary
+    - Name: characterAttribModifier
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[PersonalityEnum, Assembly-CSharp],[System.Int32,
-        mscorlib]], mscorlib
+      Data: 0|System.Collections.Generic.Dictionary`2[[Attributes+CharacterAttribute,
+        Assembly-CSharp],[System.Int32, mscorlib]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[PersonalityEnum,
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[Attributes+CharacterAttribute,
         Assembly-CSharp]], mscorlib
     - Name: 
       Entry: 12
@@ -40,16 +40,28 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 2
     - Name: 
       Entry: 7
       Data: 
     - Name: $k
       Entry: 3
-      Data: 0
+      Data: 3
     - Name: $v
       Entry: 3
-      Data: 11
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 3
+      Data: 8
     - Name: 
       Entry: 8
       Data: 
