@@ -1307,9 +1307,9 @@ RectTransform:
   - {fileID: 9058357277707631961}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -130, y: 46}
+  m_AnchorMin: {x: 0.33, y: 0}
+  m_AnchorMax: {x: 0.33, y: 0}
+  m_AnchoredPosition: {x: 0, y: 46}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &2371037748169827783
@@ -1338,8 +1338,6 @@ MonoBehaviour:
   m_seedIncorrect: {fileID: 646011786368576581}
   m_seedCurrentlyUsed: {fileID: 9199485696922465086}
   m_confirmCopy: {fileID: 4367782074501287938}
-  ValidColor: {r: 0.43542692, g: 0.7830189, b: 0.31394625, a: 1}
-  UnvalidColor: {r: 0.754717, g: 0.19963923, b: 0.15307939, a: 1}
 --- !u!114 &8594073896439092658
 MonoBehaviour:
   m_ObjectHideFlags: 0

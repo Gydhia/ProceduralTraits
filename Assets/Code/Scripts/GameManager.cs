@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
     }
+
+    [Header("Characters Pictures")] [SerializeField]
+    private Camera m_pictureCamera;
     
     [Header("Seed")]
     public bool RegenerateSeed = true;

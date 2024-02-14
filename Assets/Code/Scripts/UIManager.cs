@@ -28,11 +28,15 @@ public class UIManager : MonoBehaviour
     public UISeedController SeedController;
     public UIDescriptionController DescriptionController;
     public UITraitsController TraitsController;
+    public UITraitIconsController TraitIconsController;
+    public UISavesSection SavesSection;
 
     private void Start()
     {
         SeedController.Init();
         DescriptionController.Init(null);
         TraitsController.Init();
+        TraitIconsController.Init();
+        SavesSection.Init();
     }
 }
