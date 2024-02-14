@@ -1578,6 +1578,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88179a2abc9e3f7478abd9dac419a012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_traitItemPrefab: {fileID: 1503706488740557254, guid: ad22c254b5c06874fb0f77a44ded960a,
+    type: 3}
+  m_traitsHolder: {fileID: 382119261025488050}
   m_content: {fileID: 4698785982530628464}
   m_AddTrait: {fileID: 5974388168512903704}
 --- !u!1 &3373214667404285602
@@ -2227,7 +2230,7 @@ GameObject:
   - component: {fileID: 6406158158786133475}
   - component: {fileID: 2068773153680599744}
   m_Layer: 5
-  m_Name: Content
+  m_Name: ItemsContent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

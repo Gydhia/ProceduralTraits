@@ -18,23 +18,23 @@ public class CharacterInfo
 
     private static List<string> birthSentences = new List<string>
     {
-        "%NOM% est né dans la ville de %VILLE_NAISSANCE% dans l'empire de %EMPIRE_NAISSANCE%. ",
-        "Dans son enfance, %NOM% a vécu dans la ville de %VILLE_NAISSANCE% où il a appris les coutumes locales. ",
-        "La jeunesse de %NOM% a été marquée par les ruelles animées de %VILLE_NAISSANCE%. ",
-        "Né à %VILLE_NAISSANCE%, %NOM% a grandi en admirant les monuments de son empire. ",
-        "%NOM% a passé son enfance à %VILLE_NAISSANCE%, une ville imprégnée d'histoire et de tradition. ",
-        "Le passé de %NOM% à %VILLE_NAISSANCE% l'a préparé aux défis de la vie adulte. ",
-        "Les premières années de %NOM% ont été bercées par les bruits et les odeurs de %VILLE_NAISSANCE%. "
+        "%NOM% was born in the city of %VILLE_NAISSANCE% in the empire of %EMPIRE_NAISSANCE%. ",
+        "During childhood, %NOM% lived in the city of %VILLE_NAISSANCE% where he learned the local customs. ",
+        "%NOM%'s youth was marked by the lively streets of %VILLE_NAISSANCE%. ",
+        "Born in %VILLE_NAISSANCE%, %NOM% grew up admiring the monuments of his empire. ",
+        "%NOM% spent his childhood in %VILLE_NAISSANCE%, a city steeped in history and tradition. ",
+        "%NOM%'s past in %VILLE_NAISSANCE% prepared him for the challenges of adult life. ",
+        "%NOM%'s early years were filled with the sounds and smells of %VILLE_NAISSANCE%. "
     };
 
     private static List<string> currentSentences = new List<string>
     {
-        "%NOM% réside actuellement à %VILLE_ACTUELLE%, où il s'implique dans la vie communautaire. ",
-        "À présent, %NOM% travaille dans la ville de %VILLE_ACTUELLE%. ",
-        "Actuellement établi à %VILLE_ACTUELLE%, %NOM% explore les richesses culturelles de sa nouvelle demeure. ",
-        "%NOM% a récemment déménagé à %VILLE_ACTUELLE% pour démarrer une nouvelle vie. ",
-        "Dans sa vie actuelle à %VILLE_ACTUELLE%, %NOM% cherche à se réaliser pleinement. ",
-        "La vie quotidienne de %NOM% à %VILLE_ACTUELLE% est teintée de nouvelles rencontres et découvertes. "
+        "%NOM% currently resides in %VILLE_ACTUELLE%, where he is involved in community life. ",
+        "Currently, %NOM% works in the city of %VILLE_ACTUELLE%. ",
+        "Now established in %VILLE_ACTUELLE%, %NOM% explores the cultural riches of his new home. ",
+        "%NOM% recently moved to %VILLE_ACTUELLE% to start a new life. ",
+        "In %NOM%'s current life in %VILLE_ACTUELLE%, he seeks to fulfill himself fully. ",
+        "%NOM%'s daily life in %VILLE_ACTUELLE% is filled with new encounters and discoveries. "
     };
     
     public void Generate(System.Random generator)

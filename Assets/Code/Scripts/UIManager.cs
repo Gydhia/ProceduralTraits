@@ -25,6 +25,11 @@ public class UIManager : MonoBehaviour
     public Color ValidColor;
     public Color UnvalidColor;
     
+    public Color GoodColor;
+    public Color MixedColor;
+    public Color BadColor;
+
+    
     public UISeedController SeedController;
     public UIDescriptionController DescriptionController;
     public UITraitsController TraitsController;

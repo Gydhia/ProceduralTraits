@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public enum Characteristics
@@ -30,25 +31,37 @@ public class CharacterData
     {
         Seed = seed;
         
-        PhysicalTraits = new List<PhysicalTraitPreset>();
-        MentalTraits = new List<MentalTraitPreset>();
+        Traits = new List<TraitPreset>();
+
+        Characteristics = new Dictionary<Characteristics, int>();
 
         CharacterInfo = new CharacterInfo();
     }
 
     public Guid Seed;
-    public List<PhysicalTraitPreset> PhysicalTraits { get; private set; }
-    public List<MentalTraitPreset> MentalTraits { get; private set; }
+    public List<TraitPreset> Traits;
+    public IEnumerable<PhysicalTraitPreset> PhysicalTraits 
+        => Traits.OfType<PhysicalTraitPreset>();
+    public IEnumerable<MentalTraitPreset> MentalTraits 
+        => Traits.OfType<MentalTraitPreset>();
 
+    public Dictionary<Characteristics, int> Characteristics;
+    
     public CharacterInfo CharacterInfo;
 
     public void TryAddMentalTrait(MentalTraitPreset mPreset)
     {
-        MentalTraits.Add(mPreset);
+        if (!Traits.Contains(mPreset))
+        {
+            Traits.Add(mPreset);
+        }
     }
     
     public void TryAddPhysicalTrait(PhysicalTraitPreset pPreset)
     {
-        PhysicalTraits.Add(pPreset);
+        if (!Traits.Contains(pPreset))
+        {
+            Traits.Add(pPreset);
+        }
     }
 }

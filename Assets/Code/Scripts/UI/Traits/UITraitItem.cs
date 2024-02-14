@@ -11,6 +11,8 @@ public class UITraitItem : MonoBehaviour
 {
     [SerializeField] private Color m_bonusColor;
     [SerializeField] private Color m_malusColor;
+
+    [SerializeField] private Button m_selfButton;
     
     [SerializeField] private UITraitModifier m_modifierPrefab;
 
@@ -21,23 +23,31 @@ public class UITraitItem : MonoBehaviour
     private List<UITraitModifier> m_traitModifiers = new List<UITraitModifier>();
 
     private bool m_isExpended = false;
-
-    public void Start()
+    
+    public void Init(TraitPreset trait)
     {
-        Init();
-    }
-
-    public void Init()
-    {
-        var random = new Random();
-        int nbOfModifiers = random.Next(1, 5);
-
-        for (int i = 0; i < nbOfModifiers; i++)
+        m_traitName.text = trait.TraitName;
+        m_traitName.color = TraitPreset.GetColorFromType(trait.Type);
+        
+        if (trait.CharacterAttributesModifier == null)
         {
-            m_traitModifiers.Add(
-                Instantiate(m_modifierPrefab, m_modifiersHolder)
+            m_selfButton.interactable = false;
+        }
+        else
+        {
+            m_selfButton.interactable = true;
+
+            foreach (var attributeModifier in trait.CharacterAttributesModifier)
+            {
+                m_traitModifiers.Add(
+                    Instantiate(m_modifierPrefab, m_modifiersHolder)
                 );
-            m_traitModifiers[^1].SetText(i % 2 == 0 ? "+2 strength" : "-4 dexterity", i % 2 == 0 ? m_bonusColor : m_malusColor);
+            
+                m_traitModifiers[^1].SetText(
+                    attributeModifier.Value + " " + attributeModifier.Key,
+                    attributeModifier.Value < 0 ? m_malusColor : m_bonusColor
+                );
+            }
         }
     }
 

@@ -120,6 +120,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ValidColor: {r: 1, g: 1, b: 1, a: 1}
   UnvalidColor: {r: 0.754717, g: 0.19963923, b: 0.15307939, a: 1}
+  GoodColor: {r: 0.43542692, g: 0.7830189, b: 0.31394625, a: 1}
+  MixedColor: {r: 0.754717, g: 0.19963923, b: 0.15307939, a: 1}
+  BadColor: {r: 1, g: 0.7372549, b: 0.34509805, a: 1}
   SeedController: {fileID: 2258994770046544125}
   DescriptionController: {fileID: 7008459418327958803}
   TraitsController: {fileID: 9033309297966177527}
