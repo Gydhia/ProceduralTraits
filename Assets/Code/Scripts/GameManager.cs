@@ -41,7 +41,8 @@ public class GameManager : MonoBehaviour
     }
 
     public static Action<Guid> OnSeedUpdate;
-    
+
+    public List<EmpirePreset> Empires;
     public System.Random Generator;
 
     [Button]
