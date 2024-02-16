@@ -28,10 +28,10 @@ MonoBehaviour:
   - Coralville
   - Nautelia
   - Perlefonds
-  - "Oc\xE9anis"
+  - Oceanis
   FirstNames:
   - Marina
-  - "C\xE9line"
+  - Celine
   - Ariel
   - Thalia
   - Nereus
@@ -41,8 +41,8 @@ MonoBehaviour:
   - Aquila
   - Aquarina
   LastNames:
-  - "Oc\xE9anis"
-  - "Mar\xE9e"
+  - Oceanis
+  - Maree
   - Coraline
   - Aqualis
   - Nauticus

@@ -22,15 +22,15 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   EmpireColor: {r: 0.30966085, g: 0.6981132, b: 0.19428623, a: 1}
-  EmpireName: "Sovereignty of \xC9meraldia"
+  EmpireName: Sovereignty of Emeraldia
   Cities:
   - Vertoria
-  - "\xC9meraldis"
+  - Emeraldis
   - Peridot
   - Sylvalie
   - "Florac\xE9e"
   FirstNames:
-  - "\xC9meraude"
+  - Emeraude
   - Floriane
   - Sylvie
   - "Ga\xEFa"
@@ -44,7 +44,7 @@ MonoBehaviour:
   - Verdantis
   - Sylvega
   - "Flor\xE9an"
-  - "\xC9meraldis"
+  - emeraldis
   - Prasios
   - Sylvanus
   - Tropica

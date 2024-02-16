@@ -24,29 +24,29 @@ MonoBehaviour:
   EmpireColor: {r: 0.735849, g: 0.5935386, b: 0.731783, a: 1}
   EmpireName: Empire of Luminoctis
   Cities:
-  - "Cit\xE9 d'Aurorium"
+  - Aurorium
   - Brillancia
-  - "\xC9clatville"
+  - Eclatville
   - Pharellum
-  - "Luxor\xE9e"
+  - Luxoria
   FirstNames:
   - Astra
-  - "K\xE9ba"
-  - "Sol\xE8ne"
+  - Keba
+  - Solene
   - Orion
   - Stella
   - Lucian
   - Elara
   - Cassio
   - Surya
-  - "H\xE9lios"
+  - Helios
   LastNames:
   - Argentius
-  - "C\xE9leste"
+  - Celeste
   - Luminor
   - Astrid
   - Solarius
-  - "\xC9toileau"
+  - Etoileau
   - Aurore
   - Radieux
   - Raynald

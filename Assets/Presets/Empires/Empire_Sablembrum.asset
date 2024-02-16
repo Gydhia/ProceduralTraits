@@ -25,7 +25,7 @@ MonoBehaviour:
   EmpireName: Dominion of Sablembrum
   Cities:
   - Aridolia
-  - "Sabl\xE9cume"
+  - Sablecume
   - Rocdune
   - Sahara
   - "D\xE9sert\xE9toile"
@@ -34,8 +34,8 @@ MonoBehaviour:
   - Arena
   - Roxane
   - Sandrine
-  - "Arid\xE9e"
-  - "D\xE9sir\xE9e"
+  - Aride
+  - Desire
   - Serena
   - Duna
   - Zephyr
@@ -43,11 +43,11 @@ MonoBehaviour:
   LastNames:
   - Aridus
   - Sablonis
-  - "Roc\xE9an"
-  - "S\xE9r\xE9nis"
+  - Rocean
+  - Serenis
   - Dunes
   - Vastum
   - Sableye
-  - "D\xE9sertus"
-  - "Mar\xE9cage"
+  - Desertus
+  - Marecage
   - Solis
