@@ -32,8 +32,8 @@ public class GeneratorManager : MonoBehaviour
     {
         CharacterData charData = new CharacterData(seed);
         
-        int mentalTraitsNb = generator.Next(0, m_mentalTraitPresets.Count);
-        int physicalTraitsNb = generator.Next(0, m_physicalTraitPresets.Count);
+        int mentalTraitsNb = generator.Next(1, m_mentalTraitPresets.Count);
+        int physicalTraitsNb = generator.Next(1, m_physicalTraitPresets.Count);
 
         for (int i = 0; i < mentalTraitsNb; i++)
         {

@@ -9,7 +9,7 @@ public class PhysicalTraitPreset : TraitPreset
     [SerializeField] 
     private Dictionary<ClothPart, Sprite> m_bodySpriteModifier;
     [SerializeField] 
-    private Dictionary<ClothPart, Sprite> m_bodyColorModifier;
+    private Dictionary<ClothPart, Color> m_bodyColorModifier;
     
     
     public Dictionary<ClothPart, Sprite> BodySpriteModifier => m_bodySpriteModifier;

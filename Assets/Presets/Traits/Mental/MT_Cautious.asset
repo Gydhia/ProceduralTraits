@@ -40,7 +40,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 2
+      Data: 1
     - Name: 
       Entry: 7
       Data: 
@@ -54,23 +54,14 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 15
-    - Name: $v
-      Entry: 3
-      Data: 3
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
       Entry: 13
       Data: 
     - Name: 
       Entry: 8
       Data: 
+  Type: 0
   m_traitName: Cautious
+  m_requiredTraits: []
+  m_incompatibleTraits: []
   m_icon: {fileID: 21300000, guid: 053cbc6d9d8cc1a4f8689d4b9ad82230, type: 3}
   m_mentalSentence: I should be careful from now

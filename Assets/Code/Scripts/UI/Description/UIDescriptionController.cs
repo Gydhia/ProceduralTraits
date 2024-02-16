@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class UIDescriptionController : MonoBehaviour
 {
+    [SerializeField] private UICharacteristicItem m_characteristicItemPrefab;
+    [SerializeField] private Transform m_characteristicsHolder;
+    
     [SerializeField] private RectTransform m_content;
     
     [SerializeField] private Image m_nameBackground;
@@ -21,8 +24,22 @@ public class UIDescriptionController : MonoBehaviour
     
     [SerializeField] private TextMeshProUGUI m_description;
 
+    private List<UICharacteristicItem> m_characteristicItems = new List<UICharacteristicItem>();
+    
     private void Awake()
     {
+        foreach (string chara in Enum.GetNames(typeof(Characteristics)))
+        {
+            Characteristics characteristic = Enum.Parse<Characteristics>(chara);
+            if(characteristic == Characteristics.None)
+                continue;
+            
+            m_characteristicItems.Add(Instantiate(m_characteristicItemPrefab, m_characteristicsHolder));
+            m_characteristicItems[^1].Init(characteristic);
+        }
+        
+        LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)m_characteristicsHolder);
+        
         GameManager.OnCharacterChanged += UpdateVisibility;
     }
     

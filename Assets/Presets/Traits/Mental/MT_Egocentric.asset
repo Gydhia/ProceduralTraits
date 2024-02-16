@@ -46,7 +46,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 14
+      Data: 6
     - Name: $v
       Entry: 3
       Data: -4
@@ -85,5 +85,7 @@ MonoBehaviour:
       Data: 
   Type: 2
   m_traitName: Egocentric
+  m_requiredTraits: []
+  m_incompatibleTraits: []
   m_icon: {fileID: 21300000, guid: 9aae2a2dc3bee83478e2f2c87918b841, type: 3}
   m_mentalSentence: Aren't I the best today ?!

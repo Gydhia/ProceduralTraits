@@ -17,12 +17,9 @@ public enum Characteristics
     Luck,
     MentalHealth,
     Creativity,
-    Reflexes,
-    Flexibility,
     Will,
     Speed,
-    Oratory,
-    Resiliency
+    Oratory
 }
 
 public class CharacterData
@@ -47,6 +44,11 @@ public class CharacterData
     public IEnumerable<MentalTraitPreset> MentalTraits 
         => Traits.OfType<MentalTraitPreset>();
 
+    public int GetCharacteristicModifier(Characteristics chara)
+        => Traits
+            .Where(t => t.CharacterAttributesModifier != null && t.CharacterAttributesModifier.TryGetValue(chara, out int value))
+            .Sum(t => t.CharacterAttributesModifier[chara]);
+    
     public Dictionary<Characteristics, int> Characteristics;
     
     public CharacterInfo CharacterInfo;

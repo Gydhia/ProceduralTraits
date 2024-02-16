@@ -80,7 +80,6 @@ public class UITraitIconsController : MonoBehaviour
 
     private IEnumerator ShowMonologueText(MentalTraitPreset mPreset, float timeToShow = 0.4f)
     {
-        Debug.Log("Started monlogue show");
         float delayPerCharacter = timeToShow / mPreset.MentalSentence.Length;
 
         m_bottomBubble.color = TraitPreset.GetColorFromType(mPreset.Type);
@@ -91,8 +90,6 @@ public class UITraitIconsController : MonoBehaviour
             m_monologueText.text += mPreset.MentalSentence[i];
             yield return new WaitForSeconds(delayPerCharacter);
         }
-
-        Debug.Log("Ended monologue show");
 
         m_textCoroutine = null;
     }
