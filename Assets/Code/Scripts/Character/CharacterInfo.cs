@@ -18,7 +18,7 @@ public class CharacterInfo
 
     private static List<string> birthSentences = new List<string>
     {
-        "%NOM% was born in the city of %VILLE_NAISSANCE% in the empire of %EMPIRE_NAISSANCE%. ",
+        "%NOM% was born in the city of %VILLE_NAISSANCE% in the %EMPIRE_NAISSANCE%. ",
         "During childhood, %NOM% lived in the city of %VILLE_NAISSANCE% where he learned the local customs. ",
         "%NOM%'s youth was marked by the lively streets of %VILLE_NAISSANCE%. ",
         "Born in %VILLE_NAISSANCE%, %NOM% grew up admiring the monuments of his empire. ",

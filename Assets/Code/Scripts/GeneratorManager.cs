@@ -7,6 +7,8 @@ public class GeneratorManager : MonoBehaviour
 {
     [SerializeField] private List<PhysicalTraitPreset> m_physicalTraitPresets;
     [SerializeField] private List<MentalTraitPreset> m_mentalTraitPresets;
+
+    [SerializeField] private ModularController m_modularController;
     
     public List<PhysicalTraitPreset> PhysicalTraitPresets => m_physicalTraitPresets;
     public List<MentalTraitPreset> MentalTraitPresets => m_mentalTraitPresets;
@@ -54,8 +56,10 @@ public class GeneratorManager : MonoBehaviour
             
             charData.Characteristics.Add(characteristic, generator.Next(1, 11));
         }
-        
+
         charData.CharacterInfo.Generate(generator);
+        charData.CharacterVisuals.Generate(generator, m_modularController);
+        m_modularController.ApplyVisuals(charData);
         
         GameManager.OnCharacterChanged?.Invoke(charData);
     }

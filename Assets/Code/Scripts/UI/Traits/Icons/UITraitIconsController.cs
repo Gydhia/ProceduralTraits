@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,10 +29,10 @@ public class UITraitIconsController : MonoBehaviour
 
     private void UpdateTraits(CharacterData charData)
     {
+        AbortMonologueCoroutines();
+        
         if (charData == null)
         {
-            AbortMonologueCoroutines();
-
             gameObject.SetActive(false);
         }
         else
@@ -59,7 +60,7 @@ public class UITraitIconsController : MonoBehaviour
     private void OnToggledIconChanged(UITraitIcon icon, bool state)
     {
         AbortMonologueCoroutines();
-
+        
         m_textCoroutine = StartCoroutine(ShowMonologueText(icon.MentalPreset));
     }
 
@@ -68,6 +69,7 @@ public class UITraitIconsController : MonoBehaviour
         for (int i = 0; i < m_traitIcons.Count; i++)
         {
             m_traitIcons[i].SelfToggle.SetIsOnWithoutNotify(true);
+            
             m_textCoroutine = StartCoroutine(ShowMonologueText(m_traitIcons[i].MentalPreset));
 
             yield return new WaitForSeconds(m_monologueDelay);
@@ -78,6 +80,7 @@ public class UITraitIconsController : MonoBehaviour
 
     private IEnumerator ShowMonologueText(MentalTraitPreset mPreset, float timeToShow = 0.4f)
     {
+        Debug.Log("Started monlogue show");
         float delayPerCharacter = timeToShow / mPreset.MentalSentence.Length;
 
         m_bottomBubble.color = TraitPreset.GetColorFromType(mPreset.Type);
@@ -88,6 +91,8 @@ public class UITraitIconsController : MonoBehaviour
             m_monologueText.text += mPreset.MentalSentence[i];
             yield return new WaitForSeconds(delayPerCharacter);
         }
+
+        Debug.Log("Ended monologue show");
 
         m_textCoroutine = null;
     }

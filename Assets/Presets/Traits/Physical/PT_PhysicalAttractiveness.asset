@@ -26,11 +26,11 @@ MonoBehaviour:
       Data: 
     - Name: m_bodySpriteModifier
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[BodyPart, Assembly-CSharp],[UnityEngine.Sprite,
+      Data: 0|System.Collections.Generic.Dictionary`2[[ClothPart, Assembly-CSharp],[UnityEngine.Sprite,
         UnityEngine.CoreModule]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[BodyPart, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[ClothPart, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -54,4 +54,4 @@ MonoBehaviour:
       Entry: 6
       Data: 
   Type: 0
-  m_traitName: 
+  m_traitName: Attractive

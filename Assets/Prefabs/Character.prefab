@@ -362,7 +362,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 11666675, guid: 38ad4ab75afbbcb4b83f6b3eff17d472, type: 3}
+  m_Sprite: {fileID: 1791467947, guid: 38ad4ab75afbbcb4b83f6b3eff17d472, type: 3}
   m_Color: {r: 0.6415094, g: 0.493236, b: 0.493236, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -669,7 +669,7 @@ GameObject:
   - component: {fileID: 7081649275365592497}
   - component: {fileID: 2732407535589160335}
   m_Layer: 0
-  m_Name: LeftHand
+  m_Name: RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1382,13 +1382,21 @@ MonoBehaviour:
     SerializedFormat: 2
     SerializedBytes: 
     ReferencedUnityObjects:
+    - {fileID: 2578861020049436109}
+    - {fileID: 7872771223210597397}
+    - {fileID: 2093720832522759135}
+    - {fileID: 4256854924228435847}
+    - {fileID: 3631388560152266309}
+    - {fileID: 6197000998032187559}
+    - {fileID: 7578925256024665031}
+    - {fileID: 2732407535589160335}
+    - {fileID: 7246428963459322144}
+    - {fileID: 78068946349180271}
     - {fileID: 8061393967102015815}
     - {fileID: 222317954335860979}
     - {fileID: 6494977784198937822}
     - {fileID: 2675194429303254316}
     - {fileID: 5397124786829811675}
-    - {fileID: 7246428963459322144}
-    - {fileID: 78068946349180271}
     - {fileID: 8945399357935020567}
     - {fileID: 5477112586609713087}
     - {fileID: 5669006876922093002}
@@ -1403,13 +1411,13 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: m_body
+    - Name: m_skins
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[BodyPart, Assembly-CSharp],[UnityEngine.SpriteRenderer,
+      Data: 0|System.Collections.Generic.Dictionary`2[[SkinPart, Assembly-CSharp],[UnityEngine.SpriteRenderer,
         UnityEngine.CoreModule]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[BodyPart, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[SkinPart, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -1422,13 +1430,13 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 16
+      Data: 10
     - Name: 
       Entry: 7
       Data: 
     - Name: $k
       Entry: 3
-      Data: 1
+      Data: 0
     - Name: $v
       Entry: 10
       Data: 0
@@ -1440,7 +1448,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 2
+      Data: 1
     - Name: $v
       Entry: 10
       Data: 1
@@ -1452,7 +1460,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 3
+      Data: 2
     - Name: $v
       Entry: 10
       Data: 2
@@ -1464,7 +1472,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 4
+      Data: 3
     - Name: $v
       Entry: 10
       Data: 3
@@ -1476,7 +1484,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 5
+      Data: 4
     - Name: $v
       Entry: 10
       Data: 4
@@ -1488,7 +1496,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 6
+      Data: 5
     - Name: $v
       Entry: 10
       Data: 5
@@ -1500,7 +1508,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 7
+      Data: 6
     - Name: $v
       Entry: 10
       Data: 6
@@ -1512,7 +1520,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 8
+      Data: 7
     - Name: $v
       Entry: 10
       Data: 7
@@ -1524,7 +1532,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 9
+      Data: 8
     - Name: $v
       Entry: 10
       Data: 8
@@ -1536,7 +1544,129 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
+      Data: 9
+    - Name: $v
+      Entry: 10
+      Data: 9
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_clothes
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[ClothPart, Assembly-CSharp],[UnityEngine.SpriteRenderer,
+        UnityEngine.CoreModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 3|System.Collections.Generic.EnumEqualityComparer`1[[ClothPart, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 17
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 10
       Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 10
+      Data: 11
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 10
+      Data: 12
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 10
+      Data: 13
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 5
+    - Name: $v
+      Entry: 10
+      Data: 14
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 6
+    - Name: $v
+      Entry: 10
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 7
     - Name: $v
       Entry: 10
       Data: 9
@@ -1548,58 +1678,10 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 11
+      Data: 20
     - Name: $v
       Entry: 10
-      Data: 10
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 12
-    - Name: $v
-      Entry: 10
-      Data: 11
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 13
-    - Name: $v
-      Entry: 10
-      Data: 12
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 14
-    - Name: $v
-      Entry: 10
-      Data: 13
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
       Data: 15
-    - Name: $v
-      Entry: 10
-      Data: 14
     - Name: 
       Entry: 8
       Data: 
@@ -1608,10 +1690,94 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
+      Data: 30
+    - Name: $v
+      Entry: 10
       Data: 16
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 31
     - Name: $v
       Entry: 10
-      Data: 15
+      Data: 17
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 40
+    - Name: $v
+      Entry: 10
+      Data: 18
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 41
+    - Name: $v
+      Entry: 10
+      Data: 19
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 42
+    - Name: $v
+      Entry: 10
+      Data: 20
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 50
+    - Name: $v
+      Entry: 10
+      Data: 21
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 51
+    - Name: $v
+      Entry: 10
+      Data: 22
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 60
+    - Name: $v
+      Entry: 10
+      Data: 23
     - Name: 
       Entry: 8
       Data: 
@@ -1621,6 +1787,46 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+  m_skinColor:
+  - {r: 0.58431375, g: 0.45882356, b: 0.26666668, a: 1}
+  - {r: 1, g: 0.87843144, b: 0.69411767, a: 1}
+  - {r: 0.9607844, g: 0.8235295, b: 0.6156863, a: 1}
+  - {r: 0.87843144, g: 0.7372549, b: 0.52156866, a: 1}
+  m_clothesColor:
+  - {r: 1, g: 0.8000001, b: 0, a: 1}
+  - {r: 0.8313726, g: 0.7960785, b: 0.7254902, a: 1}
+  - {r: 0.38823533, g: 0.7058824, b: 0.28235295, a: 1}
+  - {r: 0.20392159, g: 0.28627452, b: 0.36862746, a: 1}
+  - {r: 0.58431375, g: 0.64705884, b: 0.6509804, a: 1}
+  - {r: 0.87843144, g: 0.34509805, b: 0.28235295, a: 1}
+  - {r: 0.9333334, g: 0.9333334, b: 0.9333334, a: 1}
+  - {r: 0.40000004, g: 0.8000001, b: 0.8000001, a: 1}
+  m_eyesColor:
+  - {r: 0.69411767, g: 0.49803925, b: 0.2901961, a: 1}
+  - {r: 0, g: 0.62352943, b: 0.89019614, a: 1}
+  - {r: 0.58431375, g: 0.7568628, b: 0.121568635, a: 1}
+  m_hairColor:
+  - {r: 0.23529413, g: 0.23529413, b: 0.23529413, a: 1}
+  - {r: 0.8431373, g: 0.7490196, b: 0.5803922, a: 1}
+  - {r: 0.3647059, g: 0.32941177, b: 0.30588236, a: 1}
+  m_haircuts:
+  - {fileID: -1851000917, guid: 38ad4ab75afbbcb4b83f6b3eff17d472, type: 3}
+  - {fileID: 11666675, guid: 38ad4ab75afbbcb4b83f6b3eff17d472, type: 3}
+  - {fileID: -21606273, guid: 38ad4ab75afbbcb4b83f6b3eff17d472, type: 3}
+  - {fileID: 1791467947, guid: 38ad4ab75afbbcb4b83f6b3eff17d472, type: 3}
+  - {fileID: -1096978319, guid: 38ad4ab75afbbcb4b83f6b3eff17d472, type: 3}
+  - {fileID: 924342057, guid: 38ad4ab75afbbcb4b83f6b3eff17d472, type: 3}
+  m_eyes:
+  - {fileID: -902908748, guid: d9229ff1c0e0566439039cbbf52d93d7, type: 3}
+  - {fileID: -175226277, guid: d9229ff1c0e0566439039cbbf52d93d7, type: 3}
+  m_eyebrows:
+  - {fileID: 997510639, guid: d9229ff1c0e0566439039cbbf52d93d7, type: 3}
+  - {fileID: 1175454996, guid: d9229ff1c0e0566439039cbbf52d93d7, type: 3}
+  - {fileID: 1813419998, guid: d9229ff1c0e0566439039cbbf52d93d7, type: 3}
+  m_nose:
+  - {fileID: -360488992, guid: d9229ff1c0e0566439039cbbf52d93d7, type: 3}
+  - {fileID: 1930357503, guid: d9229ff1c0e0566439039cbbf52d93d7, type: 3}
+  - {fileID: 355380137, guid: d9229ff1c0e0566439039cbbf52d93d7, type: 3}
   m_visuals: {fileID: 9022138089397551672}
 --- !u!1 &6078933794962762840
 GameObject:
@@ -2675,11 +2881,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5130418645542208268, guid: 192392bfeaefa7b4eb84f2a9ec80b79f,
         type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 3.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 5130418645542208268, guid: 192392bfeaefa7b4eb84f2a9ec80b79f,
-        type: 3}
       propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
@@ -2731,7 +2932,7 @@ PrefabInstance:
     - target: {fileID: 5130418645542208268, guid: 192392bfeaefa7b4eb84f2a9ec80b79f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 7.35
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5130418645542208268, guid: 192392bfeaefa7b4eb84f2a9ec80b79f,
         type: 3}
@@ -2769,6 +2970,31 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5333010973540557073, guid: 192392bfeaefa7b4eb84f2a9ec80b79f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880550089279999200, guid: 192392bfeaefa7b4eb84f2a9ec80b79f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880550089279999200, guid: 192392bfeaefa7b4eb84f2a9ec80b79f,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880550089279999200, guid: 192392bfeaefa7b4eb84f2a9ec80b79f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880550089279999200, guid: 192392bfeaefa7b4eb84f2a9ec80b79f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880550089279999200, guid: 192392bfeaefa7b4eb84f2a9ec80b79f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0

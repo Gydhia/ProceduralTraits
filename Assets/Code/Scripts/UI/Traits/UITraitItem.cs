@@ -59,7 +59,7 @@ public class UITraitItem : MonoBehaviour
         m_isExpended = !m_isExpended;
 
         LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)m_selfTransform.parent.transform);
-        m_selfTransform.DOSizeDelta(endSize, 0.6f).OnUpdate(() => 
+        m_selfTransform.DOSizeDelta(endSize, 0.3f).OnUpdate(() => 
             LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)m_selfTransform.parent.transform));
 
     }

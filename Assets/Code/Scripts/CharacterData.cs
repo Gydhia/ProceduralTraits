@@ -35,6 +35,8 @@ public class CharacterData
 
         Characteristics = new Dictionary<Characteristics, int>();
 
+        CharacterVisuals = new CharacterVisuals();
+        
         CharacterInfo = new CharacterInfo();
     }
 
@@ -48,7 +50,8 @@ public class CharacterData
     public Dictionary<Characteristics, int> Characteristics;
     
     public CharacterInfo CharacterInfo;
-
+    public CharacterVisuals CharacterVisuals;
+    
     public void TryAddMentalTrait(MentalTraitPreset mPreset)
     {
         if (!Traits.Contains(mPreset))

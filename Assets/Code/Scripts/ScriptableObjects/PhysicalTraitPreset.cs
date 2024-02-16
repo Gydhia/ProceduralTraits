@@ -7,10 +7,10 @@ using UnityEngine.Serialization;
 public class PhysicalTraitPreset : TraitPreset
 {
     [SerializeField] 
-    private Dictionary<BodyPart, Sprite> m_bodySpriteModifier;
+    private Dictionary<ClothPart, Sprite> m_bodySpriteModifier;
     [SerializeField] 
-    private Dictionary<BodyPart, Sprite> m_bodyColorModifier;
+    private Dictionary<ClothPart, Sprite> m_bodyColorModifier;
     
     
-    public Dictionary<BodyPart, Sprite> BodySpriteModifier => m_bodySpriteModifier;
+    public Dictionary<ClothPart, Sprite> BodySpriteModifier => m_bodySpriteModifier;
 }
