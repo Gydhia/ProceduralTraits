@@ -23,15 +23,50 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes:
     - Name: m_characterAttributesModifier
-      Entry: 6
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[Characteristics, Assembly-CSharp],[System.Int32,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[Characteristics,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 3
+      Data: -2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
       Data: 
     - Name: m_bodySpriteModifier
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[ClothPart, Assembly-CSharp],[UnityEngine.Sprite,
+      Data: 2|System.Collections.Generic.Dictionary`2[[ClothPart, Assembly-CSharp],[UnityEngine.Sprite,
         UnityEngine.CoreModule]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[ClothPart, Assembly-CSharp]],
+      Data: 3|System.Collections.Generic.EnumEqualityComparer`1[[ClothPart, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -72,3 +107,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d51757dd5e6bb9a48bd416482d205cda, type: 2}
   m_incompatibleTraits:
   - {fileID: 11400000, guid: 7be0980d00c245e4195cdade2ef51e69, type: 2}
+  m_isMandatory: 0
