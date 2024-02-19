@@ -28,10 +28,12 @@ public class UITraitsController : MonoBehaviour
         m_AddTrait.options.Clear();
         
         string name = string.Empty;
-        foreach (var mTrait in GeneratorManager.Instance.PhysicalTraitPresets)
+        foreach (var pTrait in GeneratorManager.Instance.PhysicalTraitPresets)
         {
-            bool isValid = mTrait.HasAnyIncompatibleTrait(charData.Traits);
-            name = mTrait.TraitName + (isValid ? "" : "[BLOCKED]");
+            bool isValid = pTrait.HasAnyIncompatibleTrait(charData.Traits);
+            name = 
+                pTrait.TraitName + 
+                (charData.Traits.Contains(pTrait) ? "[ADDED]" : (isValid ? "" : "[Blocked]"));
 
             m_AddTrait.options.Add(new TMP_Dropdown.OptionData(text: name));
         }
@@ -39,7 +41,9 @@ public class UITraitsController : MonoBehaviour
         foreach (var mTrait in GeneratorManager.Instance.MentalTraitPresets)
         {
             bool isValid = mTrait.HasAnyIncompatibleTrait(charData.Traits);
-            name = mTrait.TraitName + (isValid ? "" : "[BLOCKED]");
+            name = 
+                mTrait.TraitName + 
+                (charData.Traits.Contains(mTrait) ? "[ADDED]" : (isValid ? "" : "[Blocked]"));
             
             m_AddTrait.options.Add(new TMP_Dropdown.OptionData(text: name));
         }

@@ -90,11 +90,14 @@ public class ModularController : SerializedMonoBehaviour
     private List<Sprite> m_eyebrows;
     [SerializeField] 
     private List<Sprite> m_nose;
+    [SerializeField] 
+    private List<Sprite> m_mouthes;
 
     public List<Sprite> Haircuts => m_haircuts;
     public List<Sprite> Nose => m_nose;
     public List<Sprite> Eyes => m_eyes;
     public List<Sprite> Eyebrows => m_eyebrows;
+    public List<Sprite> Mouthes => m_mouthes;
     
     [OdinSerialize]
     private Dictionary<SkinPart, SpriteRenderer> m_skins;
@@ -162,6 +165,17 @@ public class ModularController : SerializedMonoBehaviour
                     m_clothes[spriteModifier.Key].sprite = spriteModifier.Value;
                 }   
             }
+
+            int mentalHealth = charData.Characteristics[Characteristics.MentalHealth] +
+                               charData.GetCharacteristicModifier(Characteristics.MentalHealth);
+            if (mentalHealth <= 2)
+                m_clothes[ClothPart.Mouth].sprite = m_mouthes[3];
+            else if (mentalHealth <= 5)
+                m_clothes[ClothPart.Mouth].sprite = m_mouthes[2];
+            else if (mentalHealth <= 7)
+                m_clothes[ClothPart.Mouth].sprite = m_mouthes[1];
+            else
+                m_clothes[ClothPart.Mouth].sprite = m_mouthes[0];
         }
     }
     

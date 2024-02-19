@@ -2021,6 +2021,11 @@ MonoBehaviour:
   - {fileID: -360488992, guid: d9229ff1c0e0566439039cbbf52d93d7, type: 3}
   - {fileID: 1930357503, guid: d9229ff1c0e0566439039cbbf52d93d7, type: 3}
   - {fileID: 355380137, guid: d9229ff1c0e0566439039cbbf52d93d7, type: 3}
+  m_mouthes:
+  - {fileID: -209859169, guid: d9229ff1c0e0566439039cbbf52d93d7, type: 3}
+  - {fileID: -1096750812, guid: d9229ff1c0e0566439039cbbf52d93d7, type: 3}
+  - {fileID: 1159422713, guid: d9229ff1c0e0566439039cbbf52d93d7, type: 3}
+  - {fileID: 1322357535, guid: d9229ff1c0e0566439039cbbf52d93d7, type: 3}
   m_visuals: {fileID: 9022138089397551672}
 --- !u!1 &6078933794962762840
 GameObject:

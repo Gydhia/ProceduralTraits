@@ -35,7 +35,10 @@ public class UISaveItem : MonoBehaviour
     {
         if (prevCharData != null)
             prevCharData.OnTraitChanged -= UpdatePicture;
-        
+
+        if(charData != null)
+            charData.OnTraitChanged -= UpdatePicture;
+
         if (CurrentSaveItem == this && charData != null)
         {
             CharacterData = charData;
