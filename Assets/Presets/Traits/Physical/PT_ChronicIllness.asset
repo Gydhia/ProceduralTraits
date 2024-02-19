@@ -15,7 +15,8 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 21300000, guid: 10bbf5025c189f04daa9c47c84f335b4, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -26,11 +27,11 @@ MonoBehaviour:
       Data: 
     - Name: m_bodySpriteModifier
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[BodyPart, Assembly-CSharp],[UnityEngine.Sprite,
+      Data: 0|System.Collections.Generic.Dictionary`2[[ClothPart, Assembly-CSharp],[UnityEngine.Sprite,
         UnityEngine.CoreModule]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[BodyPart, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[ClothPart, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -43,7 +44,19 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 61
+    - Name: $v
+      Entry: 10
       Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -55,3 +68,5 @@ MonoBehaviour:
       Data: 
   Type: 2
   m_traitName: Chronic Illness
+  m_requiredTraits: []
+  m_incompatibleTraits: []

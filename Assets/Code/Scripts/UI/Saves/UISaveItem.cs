@@ -25,12 +25,21 @@ public class UISaveItem : MonoBehaviour
     {
         GameManager.OnCharacterChanged += UpdatePicture;
     }
-    
-    private void UpdatePicture(CharacterData charData)
+
+    private void UpdatePicture(TraitPreset traitPreset, bool added)
     {
+        UpdatePicture(CharacterData.CurrentCharacterData, null);
+    }
+
+    private void UpdatePicture(CharacterData charData, CharacterData prevCharData)
+    {
+        if (prevCharData != null)
+            prevCharData.OnTraitChanged -= UpdatePicture;
+        
         if (CurrentSaveItem == this && charData != null)
         {
             CharacterData = charData;
+            CharacterData.OnTraitChanged += UpdatePicture;
             
             StartCoroutine(UpdateWithDelay());
         }
@@ -41,6 +50,8 @@ public class UISaveItem : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
         
         m_pictureTexture = CaptureScreen(GameManager.Instance.PictureCamera);
+        
+        Destroy(m_picture.texture);
         m_picture.texture = m_pictureTexture;
     
         m_picture.enabled = true;

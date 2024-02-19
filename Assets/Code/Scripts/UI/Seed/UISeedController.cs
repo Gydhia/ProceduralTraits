@@ -25,7 +25,7 @@ public class UISeedController : MonoBehaviour
         GameManager.OnCharacterChanged += UpdateSeedFromData;
     }
 
-    private void UpdateSeedFromData(CharacterData charData)
+    private void UpdateSeedFromData(CharacterData charData, CharacterData prevCharData)
     {
         if (charData != null)
         {

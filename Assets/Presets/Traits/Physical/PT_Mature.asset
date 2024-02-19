@@ -55,3 +55,7 @@ MonoBehaviour:
       Data: 
   Type: 0
   m_traitName: Mature
+  m_requiredTraits: []
+  m_incompatibleTraits:
+  - {fileID: 11400000, guid: 38d3bf0337b67c344adc84002776963f, type: 2}
+  - {fileID: 11400000, guid: 9dd73ec0087057441a58bb09cbb94f93, type: 2}

@@ -27,11 +27,11 @@ MonoBehaviour:
       Data: 
     - Name: m_bodySpriteModifier
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[BodyPart, Assembly-CSharp],[UnityEngine.Sprite,
+      Data: 0|System.Collections.Generic.Dictionary`2[[ClothPart, Assembly-CSharp],[UnityEngine.Sprite,
         UnityEngine.CoreModule]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[BodyPart, Assembly-CSharp]],
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[ClothPart, Assembly-CSharp]],
         mscorlib
     - Name: 
       Entry: 12
@@ -68,3 +68,7 @@ MonoBehaviour:
       Data: 
   Type: 1
   m_traitName: Calvitia
+  m_requiredTraits:
+  - {fileID: 11400000, guid: d51757dd5e6bb9a48bd416482d205cda, type: 2}
+  m_incompatibleTraits:
+  - {fileID: 11400000, guid: 7be0980d00c245e4195cdade2ef51e69, type: 2}

@@ -12,5 +12,7 @@ public class PhysicalTraitPreset : TraitPreset
     private Dictionary<ClothPart, Color> m_bodyColorModifier;
     
     
-    public Dictionary<ClothPart, Sprite> BodySpriteModifier => m_bodySpriteModifier;
+    public Dictionary<ClothPart, Sprite> BodySpriteModifier => m_bodySpriteModifier;   
+    public Dictionary<ClothPart, Color> BodyColorModifier => m_bodyColorModifier;
+
 }

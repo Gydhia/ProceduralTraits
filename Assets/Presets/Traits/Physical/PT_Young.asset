@@ -55,3 +55,7 @@ MonoBehaviour:
       Data: 
   Type: 0
   m_traitName: Young
+  m_requiredTraits: []
+  m_incompatibleTraits:
+  - {fileID: 11400000, guid: 9dd73ec0087057441a58bb09cbb94f93, type: 2}
+  - {fileID: 11400000, guid: e6e438a45a0873d448915dadd20a5bd7, type: 2}

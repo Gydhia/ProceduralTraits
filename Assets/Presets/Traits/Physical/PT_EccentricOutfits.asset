@@ -25,45 +25,12 @@ MonoBehaviour:
       Entry: 6
       Data: 
     - Name: m_bodySpriteModifier
-      Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[BodyPart, Assembly-CSharp],[UnityEngine.Sprite,
-        UnityEngine.CoreModule]], mscorlib
-    - Name: comparer
-      Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[BodyPart, Assembly-CSharp]],
-        mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 12
-      Data: 1
-    - Name: 
-      Entry: 7
-      Data: 
-    - Name: $k
-      Entry: 3
-      Data: 8
-    - Name: $v
       Entry: 6
-      Data: 
-    - Name: 
-      Entry: 8
-      Data: 
-    - Name: 
-      Entry: 13
-      Data: 
-    - Name: 
-      Entry: 8
       Data: 
     - Name: m_bodyColorModifier
       Entry: 6
       Data: 
   Type: 0
   m_traitName: EccentricOutfit
+  m_requiredTraits: []
+  m_incompatibleTraits: []

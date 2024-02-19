@@ -13,6 +13,7 @@ public class UITraitItem : MonoBehaviour
     [SerializeField] private Color m_malusColor;
 
     [SerializeField] private Button m_selfButton;
+    [SerializeField] private Button m_removeButton;
     
     [SerializeField] private UITraitModifier m_modifierPrefab;
 
@@ -22,12 +23,17 @@ public class UITraitItem : MonoBehaviour
 
     private List<UITraitModifier> m_traitModifiers = new List<UITraitModifier>();
 
+    private TraitPreset m_refTrait;
     private bool m_isExpended = false;
     
     public void Init(TraitPreset trait)
     {
+        m_refTrait = trait;
+        
         m_traitName.text = trait.TraitName;
         m_traitName.color = TraitPreset.GetColorFromType(trait.Type);
+
+        m_removeButton.interactable = !trait.IsMandatory;
         
         if (trait.CharacterAttributesModifier == null)
         {
@@ -54,7 +60,7 @@ public class UITraitItem : MonoBehaviour
     public void OnClickMainButton()
     {
         Vector2 endSize = m_isExpended ? 
-            new Vector2(m_selfTransform.sizeDelta.x, 72f) :
+            new Vector2(m_selfTransform.sizeDelta.x, 60f) :
             new Vector2(m_selfTransform.sizeDelta.x, m_selfTransform.sizeDelta.y + m_modifiersHolder.sizeDelta.y);
         m_isExpended = !m_isExpended;
 
@@ -66,6 +72,9 @@ public class UITraitItem : MonoBehaviour
     
     public void OnClickRemoveButton()
     {
-        
+        if (CharacterData.CurrentCharacterData.TryRemoveTrait(m_refTrait))
+        {
+            UIManager.Instance.TraitsController.RemoveTrait(this);
+        }
     }
 }

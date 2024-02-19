@@ -18,16 +18,30 @@ public class UITraitsController : MonoBehaviour
     private void Awake()
     {
         GameManager.OnCharacterChanged += UpdateVisibility;
+    }
 
+    private void RecreateTraitDropdown(CharacterData charData)
+    {
+        if (charData == null)
+            return;
+        
         m_AddTrait.options.Clear();
+        
+        string name = string.Empty;
+        foreach (var mTrait in GeneratorManager.Instance.PhysicalTraitPresets)
+        {
+            bool isValid = mTrait.HasAnyIncompatibleTrait(charData.Traits);
+            name = mTrait.TraitName + (isValid ? "" : "[BLOCKED]");
+
+            m_AddTrait.options.Add(new TMP_Dropdown.OptionData(text: name));
+        }
         
         foreach (var mTrait in GeneratorManager.Instance.MentalTraitPresets)
         {
-            m_AddTrait.options.Add(new TMP_Dropdown.OptionData(text: mTrait.TraitName));
-        }
-        foreach (var mTrait in GeneratorManager.Instance.PhysicalTraitPresets)
-        {
-            m_AddTrait.options.Add(new TMP_Dropdown.OptionData(text: mTrait.TraitName));
+            bool isValid = mTrait.HasAnyIncompatibleTrait(charData.Traits);
+            name = mTrait.TraitName + (isValid ? "" : "[BLOCKED]");
+            
+            m_AddTrait.options.Add(new TMP_Dropdown.OptionData(text: name));
         }
     }
 
@@ -38,10 +52,31 @@ public class UITraitsController : MonoBehaviour
 
     public void OnDropDownSelection(int index)
     {
-        Debug.Log("Trait to add : " + index);
+        if (index < GeneratorManager.Instance.PhysicalTraitPresets.Count)
+        {
+            var trait = GeneratorManager.Instance.PhysicalTraitPresets[index];
+
+            if (CharacterData.CurrentCharacterData.TryAddTrait(trait))
+            {
+                CreateTraitItem(trait);
+                RecreateTraitDropdown(CharacterData.CurrentCharacterData);
+            }
+        }
+        else
+        {
+            int scaledIndex = index - GeneratorManager.Instance.PhysicalTraitPresets.Count + 1;
+            
+            var trait = GeneratorManager.Instance.MentalTraitPresets[scaledIndex];
+
+            if (CharacterData.CurrentCharacterData.TryAddTrait(trait))
+            {
+                CreateTraitItem(trait);
+                RecreateTraitDropdown(CharacterData.CurrentCharacterData);
+            }
+        }
     }
     
-    private void UpdateVisibility(CharacterData charData)
+    private void UpdateVisibility(CharacterData charData, CharacterData prevCharData)
     {
         if (charData == null)
         {
@@ -55,10 +90,27 @@ public class UITraitsController : MonoBehaviour
             
             for (int i = 0; i < charData.Traits.Count; i++)
             {
-                m_traits.Add(Instantiate(m_traitItemPrefab, m_traitsHolder));
-                m_traits[^1].Init(charData.Traits[i]);
+                CreateTraitItem(charData.Traits[i]);
             }
+            
+            RecreateTraitDropdown(charData);
         }
+    }
+
+    private void CreateTraitItem(TraitPreset preset)
+    {
+        var newTrait = Instantiate(m_traitItemPrefab, m_traitsHolder);
+        newTrait.Init(preset);
+        
+        m_traits.Add(newTrait);
+    }
+    
+    public void RemoveTrait(UITraitItem traitToRemove)
+    {
+        m_traits.Remove(traitToRemove);
+        Destroy(traitToRemove.gameObject);
+        
+        RecreateTraitDropdown(CharacterData.CurrentCharacterData);
     }
 
     private void ClearList()

@@ -24,6 +24,8 @@ public enum Characteristics
 
 public class CharacterData
 {
+    public static CharacterData CurrentCharacterData;
+    
     public CharacterData(Guid seed)
     {
         Seed = seed;
@@ -53,20 +55,32 @@ public class CharacterData
     
     public CharacterInfo CharacterInfo;
     public CharacterVisuals CharacterVisuals;
+
+    public Action<TraitPreset, bool> OnTraitChanged;
     
-    public void TryAddMentalTrait(MentalTraitPreset mPreset)
+    public bool TryAddTrait(TraitPreset traitPreset)
     {
-        if (!Traits.Contains(mPreset))
+        if (!Traits.Contains(traitPreset) && traitPreset.HasAnyIncompatibleTrait(Traits) && traitPreset.HasRequiredTraits(Traits))
         {
-            Traits.Add(mPreset);
+            Traits.Add(traitPreset);
+            OnTraitChanged?.Invoke(traitPreset, true);
+
+            return true;
         }
+
+        return false;
     }
-    
-    public void TryAddPhysicalTrait(PhysicalTraitPreset pPreset)
+
+    public bool TryRemoveTrait(TraitPreset traitPreset)
     {
-        if (!Traits.Contains(pPreset))
+        if (Traits.Contains(traitPreset) && !traitPreset.IsMandatory)
         {
-            Traits.Add(pPreset);
+            Traits.Remove(traitPreset);
+            OnTraitChanged?.Invoke(traitPreset, false);
+
+            return true;
         }
+
+        return false;
     }
 }

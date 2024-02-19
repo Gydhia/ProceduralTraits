@@ -13,7 +13,7 @@ public class UICharacteristicItem : MonoBehaviour
 
     private void Awake()
     {
-        GameManager.OnCharacterChanged += UpdateCharacteristic;
+        GameManager.OnCharacterChanged += OnCharacterChanged;      
     }
 
 
@@ -24,11 +24,26 @@ public class UICharacteristicItem : MonoBehaviour
     }
     
     
-    private void UpdateCharacteristic(CharacterData charData)
+    private void OnCharacterChanged(CharacterData charData, CharacterData prevCharData)
     {
+        if (prevCharData != null)
+            prevCharData.OnTraitChanged -= UpdateCharacteristics;
+        
         if (charData == null)
             return;
 
+        charData.OnTraitChanged += UpdateCharacteristics;
+        
+        UpdateCharacteristics(charData);
+    }
+
+    private void UpdateCharacteristics(TraitPreset preset, bool added)
+    {
+        UpdateCharacteristics(CharacterData.CurrentCharacterData);
+    }
+    
+    private void UpdateCharacteristics(CharacterData charData)
+    {
         int modifier = charData.GetCharacteristicModifier(m_refCharacteristic);
         int finalValue = Math.Clamp(charData.Characteristics[m_refCharacteristic] + modifier, 0, 10);
         
@@ -36,7 +51,9 @@ public class UICharacteristicItem : MonoBehaviour
 
         if (modifier < 0)
             m_characteristicValue.color = UIManager.Instance.UnvalidColor;
-        else if(modifier > 0)
+        else if (modifier > 0)
             m_characteristicValue.color = UIManager.Instance.GoodColor;
+        else
+            m_characteristicValue.color = Color.white;
     }
 }

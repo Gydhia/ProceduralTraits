@@ -20,18 +20,23 @@ public class TraitPreset : SerializedScriptableObject
     [SerializeField] protected Dictionary<Characteristics, int> m_characterAttributesModifier;
     [SerializeField] protected List<TraitPreset> m_requiredTraits;
     [SerializeField] protected List<TraitPreset> m_incompatibleTraits;
+    [SerializeField] protected bool m_isMandatory = false;
 
     
     public Dictionary<Characteristics, int> CharacterAttributesModifier => m_characterAttributesModifier;
     public string TraitName => m_traitName;
     public List<TraitPreset> RequiredTraits => m_requiredTraits;
     public List<TraitPreset> IncompatibleTraits => m_incompatibleTraits;
+    public bool IsMandatory => m_isMandatory;
 
     public bool IsIncompatibleToTrait(TraitPreset otherPreset)
         => m_incompatibleTraits.Contains(otherPreset);
 
     public bool HasRequiredTraits(List<TraitPreset> otherPresets)
         => !m_requiredTraits.Except(otherPresets).Any();
+    
+    public bool HasAnyIncompatibleTrait(List<TraitPreset> otherPresets)
+        => !m_incompatibleTraits.Intersect(otherPresets).Any();
     
     public static Color GetColorFromType(TraitType type)
     {

@@ -25,6 +25,6 @@ public class UISavesSection : MonoBehaviour
     private void OnSaveClicked(UISaveItem saveItem)
     {
         UISaveItem.CurrentSaveItem = saveItem;
-        GameManager.OnCharacterChanged?.Invoke(saveItem.CharacterData);
+        GameManager.OnCharacterChanged?.Invoke(saveItem.CharacterData, CharacterData.CurrentCharacterData);
     }
 }

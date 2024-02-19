@@ -45,13 +45,23 @@ public class GameManager : MonoBehaviour
     }
 
     public static Action<Guid, System.Random> OnSeedUpdate;
-    public static Action<CharacterData> OnCharacterChanged;
+    /// <summary>
+    /// New & Previous
+    /// </summary>
+    public static Action<CharacterData, CharacterData> OnCharacterChanged;
 
     public List<EmpirePreset> Empires;
     public System.Random Generator;
 
     private void Start()
     {
-        OnCharacterChanged?.Invoke(null);
+        OnCharacterChanged?.Invoke(null, null);
+
+        OnCharacterChanged += UpdateSelectedCharacterData;
+    }
+
+    private void UpdateSelectedCharacterData(CharacterData charData, CharacterData prevCharData)
+    {
+        CharacterData.CurrentCharacterData = charData;
     }
 }

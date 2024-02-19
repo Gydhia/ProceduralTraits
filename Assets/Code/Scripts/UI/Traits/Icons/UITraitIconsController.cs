@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -27,9 +28,12 @@ public class UITraitIconsController : MonoBehaviour
         GameManager.OnCharacterChanged += UpdateTraits;
     }
 
-    private void UpdateTraits(CharacterData charData)
+    private void UpdateTraits(CharacterData charData, CharacterData prevCharData)
     {
         AbortMonologueCoroutines();
+
+        if (prevCharData != null)
+            prevCharData.OnTraitChanged -= OnTraitChanged;
         
         if (charData == null)
         {
@@ -38,22 +42,54 @@ public class UITraitIconsController : MonoBehaviour
         else
         {
             gameObject.SetActive(true);
+            
+            charData.OnTraitChanged += OnTraitChanged;
 
             ClearList();
             foreach (MentalTraitPreset mTrait in charData.MentalTraits)
             {
-                var newIcon = Instantiate(m_traitIconPrefab, m_traitsHolder);
-
-                newIcon.Init(mTrait);
-                newIcon.SelfToggle.group = m_toggleGroup;
-                newIcon.SelfToggle.onValueChanged.AddListener(
-                    (state) => OnToggledIconChanged(newIcon, state)
-                );
-
-                m_traitIcons.Add(newIcon);
+                CreateTraitIcon(mTrait);
             }
 
             m_monologueCoroutine = StartCoroutine(PlayMonologues());
+        }
+    }
+
+    private void CreateTraitIcon(MentalTraitPreset mTrait)
+    {
+        var newIcon = Instantiate(m_traitIconPrefab, m_traitsHolder);
+
+        newIcon.Init(mTrait);
+        newIcon.SelfToggle.group = m_toggleGroup;
+        newIcon.SelfToggle.onValueChanged.AddListener(
+            (state) => OnToggledIconChanged(newIcon, state)
+        );
+
+        m_traitIcons.Add(newIcon);
+    }
+
+    private void OnTraitChanged(TraitPreset traitPreset, bool added)
+    {
+        if (traitPreset is PhysicalTraitPreset)
+            return;
+
+        gameObject.SetActive(true);
+        
+        if (added)
+        {
+            CreateTraitIcon(traitPreset as MentalTraitPreset);
+        }
+        else
+        {
+            var foundPreset = m_traitIcons.First(t => t.MentalPreset == traitPreset);
+            
+            m_traitIcons.Remove(foundPreset);
+            Destroy(foundPreset.gameObject);
+
+            if (m_traitIcons.Count == 0)
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 

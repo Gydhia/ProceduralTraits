@@ -43,7 +43,7 @@ public class UIDescriptionController : MonoBehaviour
         GameManager.OnCharacterChanged += UpdateVisibility;
     }
     
-    private void UpdateVisibility(CharacterData charData)
+    private void UpdateVisibility(CharacterData charData, CharacterData prevCharData)
     {
         if (charData == null)
         {

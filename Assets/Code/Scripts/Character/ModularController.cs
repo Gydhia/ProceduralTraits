@@ -45,7 +45,9 @@ public enum ClothPart
     RightShoe = 51,
     
     // Decorations
-    Scar = 60
+    Scar = 60,
+    FaceMask = 61,
+    Tool = 62,
 }
 
 public class ModularController : SerializedMonoBehaviour
@@ -108,7 +110,6 @@ public class ModularController : SerializedMonoBehaviour
 
     public void ApplyVisuals(CharacterData charData)
     {
-        
         foreach (var skinPart in m_skins)
             skinPart.Value.color = charData.CharacterVisuals.SkinColor;
         
@@ -131,11 +132,44 @@ public class ModularController : SerializedMonoBehaviour
         m_clothes[ClothPart.LeftEyebrow].sprite = m_clothes[ClothPart.RightEyebrow].sprite = charData.CharacterVisuals.Eyebrows;
         m_clothes[ClothPart.Nose].sprite = charData.CharacterVisuals.Nose;
         m_clothes[ClothPart.Hair].sprite = charData.CharacterVisuals.Haircut;
+        
+        for (int i = (int)ClothPart.Scar; i <= (int)Enum.GetValues(typeof(ClothPart)).GetValue(Enum.GetValues(typeof(ClothPart)).Length - 1); i++)
+        {
+            ClothPart clothPart = (ClothPart)i;
+            m_clothes[clothPart].sprite = null;
+            m_clothes[clothPart].color = Color.white;
+        }
 
+        ApplyOverrides(charData);
+    }
+
+    public void ApplyOverrides(CharacterData charData)
+    {
+        foreach (PhysicalTraitPreset pTrait in charData.PhysicalTraits)
+        {
+            if (pTrait.BodyColorModifier != null)
+            {
+                foreach (var colorModifier in pTrait.BodyColorModifier)
+                {
+                    m_clothes[colorModifier.Key].color = colorModifier.Value;
+                }
+            }
+
+            if (pTrait.BodySpriteModifier != null)
+            {
+                foreach (var spriteModifier in pTrait.BodySpriteModifier)
+                {
+                    m_clothes[spriteModifier.Key].sprite = spriteModifier.Value;
+                }   
+            }
+        }
     }
     
-    private void UpdateVisuals(CharacterData charData)
+    private void UpdateVisuals(CharacterData charData, CharacterData prevCharData)
     {
+        if (prevCharData != null)
+            prevCharData.OnTraitChanged -= OnTraitUpdate;
+        
         if (charData == null)
         {
             m_visuals.SetActive(false);
@@ -145,7 +179,13 @@ public class ModularController : SerializedMonoBehaviour
             m_visuals.SetActive(true);
 
             ApplyVisuals(charData);
+            charData.OnTraitChanged += OnTraitUpdate;
         }
+    }
+
+    private void OnTraitUpdate(TraitPreset refTrait, bool isAdded)
+    {
+        ApplyVisuals(CharacterData.CurrentCharacterData);
     }
 }
 
